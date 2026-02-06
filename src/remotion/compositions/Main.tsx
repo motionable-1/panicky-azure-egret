@@ -36,8 +36,8 @@ const SFX_WHOOSH =
   "https://pub-e3bfc0083b0644b296a7080b21024c5f.r2.dev/sfx/1770392207161_tbw6sjpam78_sfx_smooth_cinematic_whoosh_transi.mp3";
 const SFX_SUCCESS_CHIME =
   "https://pub-e3bfc0083b0644b296a7080b21024c5f.r2.dev/sfx/1770392142554_ki1pscl28zq_sfx_bright_success_chime__upliftin.mp3";
-const SFX_AMBIENT =
-  "https://pub-e3bfc0083b0644b296a7080b21024c5f.r2.dev/sfx/1770392614807_hbqdxyxgsm_sfx_soft_ambient_dark_electronic_p.mp3";
+const MUSIC_BG =
+  "https://pub-e3bfc0083b0644b296a7080b21024c5f.r2.dev/music/1770394144166_b29jg9knn3t_music_Modern_upbeat_electr.mp3";
 
 /*
  * Scene absolute start frames:
@@ -62,15 +62,14 @@ export const Main: React.FC = () => {
       {/* ═══════ AUDIO LAYER ═══════ */}
       {/* Only 4 Audio tags max mounted at any time to prevent browser overload */}
 
-      {/* Ambient background pad — loops softly throughout */}
+      {/* Background music — fades in gently, fades out at end */}
       <Audio
-        src={SFX_AMBIENT}
-        loop
+        src={MUSIC_BG}
         volume={(f) => {
-          const fadeIn = interpolate(f, [0, 30], [0, 0.15], {
+          const fadeIn = interpolate(f, [0, 45], [0, 0.3], {
             extrapolateRight: "clamp",
           });
-          const fadeOut = interpolate(f, [660, 700], [0.15, 0], {
+          const fadeOut = interpolate(f, [650, 700], [0.3, 0], {
             extrapolateLeft: "clamp",
             extrapolateRight: "clamp",
           });
