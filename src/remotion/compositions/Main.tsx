@@ -1,6 +1,11 @@
-import { Artifact, Sequence, useCurrentFrame, interpolate } from "remotion";
+import {
+  Artifact,
+  Sequence,
+  useCurrentFrame,
+  interpolate,
+  Audio,
+} from "remotion";
 import { TransitionSeries, linearTiming } from "@remotion/transitions";
-import { Audio } from "@remotion/media";
 import { loadFont } from "@remotion/google-fonts/Inter";
 import { blurDissolve } from "../library/components/layout/transitions/presentations/blurDissolve";
 
