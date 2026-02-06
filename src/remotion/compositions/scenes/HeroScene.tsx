@@ -197,8 +197,7 @@ export const HeroScene: React.FC = () => {
           }}
         >
           <TextAnimation
-            className="text-6xl font-extrabold text-white text-center"
-            startFrom={18}
+            className="text-6xl font-extrabold text-white text-center"      
             createTimeline={({ textRef, tl, SplitText }) => {
               const split = new SplitText(textRef.current, { type: "words" });
               tl.fromTo(
